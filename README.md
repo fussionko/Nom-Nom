@@ -1,45 +1,26 @@
-# Pacman Capture the Flag Project Template
+# Pacman Agent
 
-This repository is a template for students to fork their own repositories to carry out their own work for the [Pacman Capture the Flag](http://ai.berkeley.edu/contest.html) project. We are very grateful to UC Berkeley CS188 for developing and sharing their system with us for teaching and learning purposes.
+A template for coding a pacman agent.
 
-While the original code runs on Python 2.7, **this version runs on Python 3.x**. It also has a few bugs fixing.
+## Setting up the environment
+1. Copy or clone the code from this framework to create your Pacman Agent, e.g., `git clone git@github.com:aig-upf/pacman-agent.git`
+2. Go into pacman-agent folder, `cd pacman-agent/`
+3. Run `git submodule update --init --remote` to pull the last pacman-contest
+4. Create a virtual environment, e.g., `python3.8 -m venv venv`
+5. Activate the virtual environment with `source venv/bin/activate`
+6. Go to the pacman-contest folder and install the requirements:
+    - `cd pacman-contest/`
+    - `pip install -r requirements.txt`
+    - `pip install -e .`
 
-You must ALWAYS keep your fork **private** and **never share it** with anybody in or outside the course, except your teammates, _even after the course is completed_. You are not allowed to make another repository copy outside the provided GitHub Classroom without the written permission of the teaching staff. Please respect the [authors request](http://ai.berkeley.edu/project_instructions.html):
+## Coding a new agent
+In the root folder do the following:
+1. Create in `my_team.py` a class with the name of your agent that inherits from `CaptureAgent`, e.g. `class ReflexCaptureAgent(CaptureAgent):`
+2. In the new class, override the `def choose_action(self, game_state):` function to return the best next action (check the given source code example).
+3. (Optional) Add any other functions to the class for reasoning / learning and improving your agents decision which could also use other code sources in the same folder.
 
-> **_Please do not distribute or post solutions to any of the projects._**
+To debug the agent you can run `capture.py` between the `baseline_team` and your current agent:
+1. `cd pacman-contest/src/contest/`
+2. `python capture.py -r baseline_team -b ../../../my_team.py`
 
-Remember to complete the [TEAM.md](TEAM.md) file with the team details of the submission.
 
-Read [CONTEST.md](CONTEST.md) file for detailed information and documentation about the code of the contest.
-
-Project should be developed as per instructions in the project specification.
-
-Script `replay.py` provides a flexible way to re-run games stored under `replays/` folder.
-
-**Hope you enjoy this project!**
-
-### Academic Integrity
-
-This is an advanced course, so we expect full professionalism and ethical conduct.  Plagiarism is a serious issue. **We trust you; please don't let us down**. The staff take academic misconduct very seriously. Suspected collusion or plagiarism will be dealt with according to the **University Academic Integrity policy**.
-
-We expect every student taking this course to adhere to it **Code of Honour** under which every learner-student should:
-
-* Submit their own original work.
-* Do not share answers with others.
-* Report suspected violations.
-* Engage in any other activities that will dishonestly improve their results or dishonestly improve or damage the results of others.
-
-Unethical behaviour is extremely serious and consequences are painful for everyone. We expect enrolled students/learners to take full **ownership** of your work and **respect** the work of teachers and other students.
-
-## Original Licensing Information from UC Berkeley
-
-Please do not distribute or publish solutions to this project. You are free to use and extend these projects for educational purposes. The Pacman AI projects were developed at UC Berkeley, primarily by
-John DeNero (denero@cs.berkeley.edu) and Dan Klein (klein@cs.berkeley.edu).  Student side autograding was added by Brad Miller, Nick Hay, and Pieter Abbeel (pabbeel@cs.berkeley.edu).
-
-For more info, see [here](http://inst.eecs.berkeley.edu/~cs188/sp09/pacman.html).
-
-You are free to use or extend these projects for educational purposes provided that 
-
-1. you do not distribute or publish solutions,
-2. you retain this notice,
-3. you provide clear attribution to UCB Berkeley, including a link to http://ai.berkeley.edu.
