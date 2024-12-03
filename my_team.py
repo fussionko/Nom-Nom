@@ -14,6 +14,8 @@ from contest.game import Directions
 from contest.util import nearest_point
 
 
+
+
 #################
 # Team creation #
 #################
@@ -140,6 +142,9 @@ class OffensiveReflexAgent(ReflexCaptureAgent):
             my_pos = successor.get_agent_state(self.index).get_position()
             min_distance = min([self.get_maze_distance(my_pos, food) for food in food_list])
             features['distance_to_food'] = min_distance
+        
+        print(successor.get_agent_state(self.index).get_position())
+
         return features
 
     def get_weights(self, game_state, action):

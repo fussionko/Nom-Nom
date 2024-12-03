@@ -956,6 +956,10 @@ def read_command(argv):
     args['delay_step'] = parsed_options.delay_step
     args['match_id'] = parsed_options.match_id
     args['contest_name'] = parsed_options.contest_name
+
+    print("\n\n\n")
+    print(args)
+    print("\n\n\n")
     return args
 
 
